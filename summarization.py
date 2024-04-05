@@ -6,11 +6,11 @@ tokenizer = BartTokenizer.from_pretrained(model_name)
 model = BartForConditionalGeneration.from_pretrained(model_name)
 
 # define text input
-article = """ This code will run on CPU by default. However, please note that BERT models are computationally intensive, and running this code on CPU might be slower compared to using a GPU. Additionally, due to the size and complexity of the BERT model, processing longer documents may also take longer. """
+articles = """ This code will run on CPU by default. However, please note that BERT models are computationally intensive, and running this code on CPU might be slower compared to using a GPU. Additionally, due to the size and complexity of the BERT model, processing longer documents may also take longer. """
 
 # Tokenize the input text
 input_tokenize = tokenizer.encode(
-    "summarize: " + article, return_tensors='pt', max_length=1024, truncation=True)
+    "summarize: " + articles, return_tensors='pt', max_length=1024, truncation=True)
 
 # Summarize the input text using BART
 summary_ids = model.generate(input_tokenize, max_length=150,
