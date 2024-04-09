@@ -18,7 +18,7 @@ summary_ids = model.generate(input_tokenize, max_length=150,
 summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
 print("Original Article: ")
-print(article)
+print(articles)
 
 print("\n Summarized Article: ")
 print(summary)
